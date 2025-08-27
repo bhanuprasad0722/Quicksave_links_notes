@@ -49,5 +49,3 @@ It was built to solve a common problem - bookmarks are messy, and notes are scat
 ## About
 This extension was built as a **side project** to simplify the way students and professionals save useful resources.  
 Instead of juggling messy bookmarks or separate note apps, QuickSave puts everything in one place.  
-
-© 2025 QuickSave Project. All rights reserved.
