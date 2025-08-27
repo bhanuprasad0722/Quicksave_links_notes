@@ -21,7 +21,7 @@ It was built to solve a common problem — bookmarks are messy, and notes are sc
    - Click on the green **Code** button → **Download ZIP**  
    - Or clone with git:  
      ```bash
-     git clone https://github.com/yourusername/quicksave-links-notes.git
+     git clone https://github.com/bhanuprasad0722/quicksave_links_notes.git
      ```
 
 2. Extract the ZIP file to a folder on your computer.
