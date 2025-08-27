@@ -1,0 +1,196 @@
+/* -------------------- COLORS -------------------- */
+:root {
+  --bg: #0f172a;         /* Background (dark slate) */
+  --card: #111827;       /* Card background */
+  --card-2: #0b1223;     /* Card gradient darker */
+  --text: #f8fafc;       /* Main text */
+  --muted: #cbd5e1;      /* Muted/secondary text */
+  --accent: #22d3ee;     /* Accent cyan */
+  --accent-2: #38bdf8;   /* Accent sky blue */
+  --danger: #ef4444;     /* Red (danger) */
+  --ok: #10b981;         /* Green (success) */
+}
+
+/* -------------------- BASE -------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  width: 360px;
+  padding: 14px;
+}
+
+/* -------------------- HEADER -------------------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.filter {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* -------------------- CARD -------------------- */
+.card {
+  background: linear-gradient(180deg, var(--card), var(--card-2));
+  border: 1px solid #1f2937;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+}
+
+/* -------------------- FORM ELEMENTS -------------------- */
+.row {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0b1223;
+  color: var(--text);
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.2);
+}
+
+/* -------------------- BUTTONS -------------------- */
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--accent-2);
+  color: #00111a;
+  font-weight: 700;
+}
+
+/* Ghost button (secondary) */
+button.ghost {
+  background: transparent;
+  border: 1px solid #334155;
+  color: var(--muted);
+}
+
+/* Icon buttons */
+button.icon {
+  padding: 6px 8px;
+  font-size: 14px;
+  background: transparent;
+  border: 1px solid #334155;
+  color: var(--text);
+}
+
+/* Starred (favorite) */
+button.icon.starred {
+  color: #fbbf24;
+  border-color: #fbbf24;
+}
+
+/* Danger (delete) */
+button.icon.danger {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* -------------------- ITEMS -------------------- */
+.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.item {
+  display: grid;
+  gap: 6px;
+  border: 1px solid #1f2937;
+  background: #0b1223;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.item-title {
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.item-sub {
+  font-size: 12px;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.item-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* -------------------- TOAST MESSAGE -------------------- */
+.toast {
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0b1223;
+  border: 1px solid #1f2937;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QuickSave</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>QuickSave</h1>
+      <label class="filter">
+        <input type="checkbox" id="filterStarred" /> Show Starred Only
+      </label>
+    </header>
+
+    <section class="card">
+      <h2>Save Current Page</h2>
+      <div class="row">
+        <label for="linkTitle">Title</label>
+        <input id="linkTitle" type="text" placeholder="Page title" />
+      </div>
+      <div class="row">
+        <label for="linkUrl">URL</label>
+        <input id="linkUrl" type="url" placeholder="https://" />
+      </div>
+      <div class="actions">
+        <button id="saveLinkBtn">Save Link</button>
+        <button id="copyTitleBtn" class="ghost">Copy Title</button>
+        <button id="copyUrlBtn" class="ghost">Copy URL</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Add Note</h2>
+      <textarea id="noteText" rows="4" placeholder="Write anything… (short or long)"></textarea>
+      <div class="actions">
+        <button id="addNoteBtn">Add Note</button>
+        <button id="clearNoteInputBtn" class="ghost">Clear</button>
+      </div>
+    </section>
+
+    <section class="list card">
+      <h2>Links</h2>
+      <ul id="linksList" class="items"></ul>
+    </section>
+
+    <section class="list card">
+      <h2>Notes</h2>
+      <ul id="notesList" class="items"></ul>
+    </section>
+
+    <footer>
+      <small>QuickSave Links & Notes • v1.0.0</small>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
