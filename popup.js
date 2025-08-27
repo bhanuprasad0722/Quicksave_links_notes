@@ -1,4 +1,4 @@
-// QuickSave Links & Notes — popup.js
+
 document.addEventListener("DOMContentLoaded", () => {
   const els = {
     linkTitle: document.getElementById('linkTitle'),
@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     notesList: document.getElementById('notesList'),
     filterStarred: document.getElementById('filterStarred')
   };
-
-  // Utils
   const uid = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
   const now = () => new Date().toISOString();
   const copy = async (text) => {
@@ -34,8 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(t);
     toastTimer = setTimeout(() => t.remove(), 1400);
   }
-
-  // Storage
   async function getItems() {
     return new Promise((resolve) => {
       chrome.storage.local.get({ items: [] }, (res) => resolve(res.items));
@@ -46,8 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
       chrome.storage.local.set({ items }, () => resolve());
     });
   }
-
-  // Prefill from current tab
   async function prefillFromActiveTab() {
     try {
       const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -56,11 +50,9 @@ document.addEventListener("DOMContentLoaded", () => {
         els.linkUrl.value = tab.url || '';
       }
     } catch (e) {
-      // ignore if no permission
+
     }
   }
-
-  // Renderers
   async function render() {
     const items = await getItems();
     const onlyStarred = els.filterStarred.checked;
@@ -193,7 +185,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // CRUD
   async function upsert(item) {
     const items = await getItems();
     const idx = items.findIndex(i => i.id === item.id);
@@ -205,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     await setItems(items.filter(i => i.id !== id));
   }
 
-  // Event handlers
+
   els.saveLinkBtn.addEventListener('click', async () => {
     const title = els.linkTitle.value.trim();
     const url = els.linkUrl.value.trim();
@@ -236,3 +227,4 @@ document.addEventListener("DOMContentLoaded", () => {
   prefillFromActiveTab();
   render();
 });
+
