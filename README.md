@@ -1,7 +1,7 @@
 # QuickSave - Links & Notes (Chrome Extension)
 
 **QuickSave** is a simple Chrome extension that lets you quickly save important links and notes while browsing.  
-It was built to solve a common problem — bookmarks are messy, and notes are scattered. QuickSave keeps both in one clean popup.  
+It was built to solve a common problem - bookmarks are messy, and notes are scattered. QuickSave keeps both in one clean popup.  
 
 ---
 
